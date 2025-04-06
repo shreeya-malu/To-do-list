@@ -1,0 +1,122 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root
+{
+    --tea-green: #ccd5aeff;
+    --beige: #e9edc9ff;
+    --cornsilk: #fefae0ff;
+    --papaya-whip: #faedcdff;
+    --buff: #d4a373ff;
+}
+
+#element1
+{
+    background-color: var(--buff);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 50px;
+    justify-self: center;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: Light 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+body 
+{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: var(--buff);
+}
+
+form, .filters 
+{
+    margin-bottom: 20px;    
+}
+
+input, select, button 
+{
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.todo 
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.completed 
+{
+    text-decoration: line-through;
+    color: gray;
+}
+
+span
+{
+    text-align: center;
+    padding: 10px;
+
+}
+
+#add,#close
+{
+    border-radius: 10px;
+}
+
+#newDayBtn 
+{
+    background-color: #ffd670;
+    border: none;
+    margin-top: 20px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+#score
+{
+    color: var(--papaya-whip);
+}
+
+.points-badge 
+{
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 40px;
+    height: 50px;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 14px;
+}
+  
+.high-priority {
+background-color: #a4133c; /* Red */
+}
+
+.medium-priority {
+background-color: #ff7b00; /* Orange */
+}
+
+.low-priority {
+background-color: #a7c957; /* Teal */
+}
+
+  
