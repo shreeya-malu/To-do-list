@@ -28,6 +28,7 @@ const typeDefs = gql`
     addTodo(task: String!, priority: Priority!): Todo!
     deleteTodo(id: ID!): Boolean!
     toggleTodo(id: ID!): Todo!
+    resetTodos: Boolean! 
   }
 `;
 
@@ -59,6 +60,11 @@ const resolvers = {
       todo.completed = !todo.completed;
       return todo;
     },
+    resetTodos: () => {
+    todos = []; // Clear the in-memory list
+    return true;
+    },
+
   },
 };
 
