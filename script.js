@@ -140,25 +140,34 @@ function renderTodos(todos) {
       list.appendChild(div);
     });
   }
-  
-  
 
-document.getElementById("newDayBtn").addEventListener("click", () => {
-    // Reset coins to 0
-    totalScore = 0;
-    document.getElementById("scoreDisplay").textContent = `🪙 Coins: ${totalScore}`;
-  
-    // Clear todos visually
-    document.getElementById("todoList").innerHTML = '';
-  
-    // (Optional) Reset in-memory list too (frontend only)
-    // Or, you could re-fetch from GraphQL to keep server state
-    todos = [];
-  
-    // (Optional) Show a confirmation
-    alert("✨ A new day has started! All tasks cleared.");
+async function resetTodos() {
+  await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        mutation {
+          resetTodos
+        }
+      `
+    })
   });
-  
+
+  // Reset coins
+  totalScore = 0;
+  updateScoreDisplay();
+
+  // Re-fetch and render updated list (should be empty)
+  getTodos();
+
+  alert("✨ A new day has started! All tasks cleared.");
+}
+
+document.getElementById("newDayBtn").addEventListener("click", resetTodos);
+
 
 document.getElementById("todo-form").addEventListener("submit", (e) => {
   e.preventDefault();
