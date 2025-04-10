@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:4000/graphql";
+const API_URL = "https://to-do-list-yj47.onrender.com/graphql";
 
 let totalScore = 0;
 
